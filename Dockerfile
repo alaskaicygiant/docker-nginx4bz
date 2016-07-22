@@ -6,6 +6,11 @@ RUN apk add --update --no-cache \
 	php5-apcu \
 	php5-xcache \
 	perl \
+	fcgi \
+	fcgiwrap \
+	automake \
+	fcgi-dev \
+	spawn-fcgi \
 	asciidoc \
 	bzip2 \
 	dbus-x11 \
