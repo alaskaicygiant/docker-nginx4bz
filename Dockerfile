@@ -2,32 +2,6 @@ FROM richarvey/nginx-php-fpm
 
 MAINTAINER Owen Ouyang <owen.ouyang@live.com>
 
-#	aspell-devel \
-#	dblatex \
-#	docbook-style-dsssl \
-#	gd-devel \
-#	gmp-devel \
-#	mod_perl \
-#	mod_perl-devel \
-#	openssl-devel \
-#	passwd \
-#	perl-App-cpanminus \
-#	perl-CPAN \
-#	perl-core \
-#	python-sphinx \
-#	texlive-cmap \
-#	texlive-cyrillic \
-#	texlive-framed \
-#	texlive-mdwtools \
-#	texlive-parskip \
-#	texlive-tex4ht \
-#	texlive-threeparttable \
-#	texlive-ucs \
-#	texlive-wrapfig \
-#	tigervnc-server-minimal \
-#	vim-enhanced \
-
-
 RUN apk add --update --no-cache \
 	php5-apcu \
 	php5-xcache \
@@ -35,13 +9,9 @@ RUN apk add --update --no-cache \
 	asciidoc \
 	bzip2 \
 	dbus-x11 \
-	firefox \
-	gcc \
-	gcc-c++ \
+	build-base \
 	git \
 	graphviz \
-	jade \
-	java-1.7.0-openjdk \
 	lynx \
 	make \
 	memcached \
@@ -123,3 +93,33 @@ RUN apk add --update --no-cache \
 	cpan --quiet --notest --skip-satisfied                    mod_env
 
 CMD ["/start.sh"]
+
+
+#	aspell-devel \
+#	dblatex \
+#	docbook-style-dsssl \
+#	gd-devel \
+#	gmp-devel \
+#	mod_perl \
+#	mod_perl-devel \
+#	openssl-devel \
+#	passwd \
+#	perl-App-cpanminus \
+#	perl-CPAN \
+#	perl-core \
+#	python-sphinx \
+#	texlive-cmap \
+#	texlive-cyrillic \
+#	texlive-framed \
+#	texlive-mdwtools \
+#	texlive-parskip \
+#	texlive-tex4ht \
+#	texlive-threeparttable \
+#	texlive-ucs \
+#	texlive-wrapfig \
+#	tigervnc-server-minimal \
+#	vim-enhanced \
+#	firefox \
+#	java-1.7.0-openjdk \
+#	gcc-c++ \
+#	jade \
