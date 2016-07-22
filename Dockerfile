@@ -2,54 +2,56 @@ FROM richarvey/nginx-php-fpm
 
 MAINTAINER Owen Ouyang <owen.ouyang@live.com>
 
+#	aspell-devel \
+#	dblatex \
+#	docbook-style-dsssl \
+#	gd-devel \
+#	gmp-devel \
+#	mod_perl \
+#	mod_perl-devel \
+#	openssl-devel \
+#	passwd \
+#	perl-App-cpanminus \
+#	perl-CPAN \
+#	perl-core \
+#	python-sphinx \
+#	texlive-cmap \
+#	texlive-cyrillic \
+#	texlive-framed \
+#	texlive-mdwtools \
+#	texlive-parskip \
+#	texlive-tex4ht \
+#	texlive-threeparttable \
+#	texlive-ucs \
+#	texlive-wrapfig \
+#	tigervnc-server-minimal \
+#	vim-enhanced \
+
+
 RUN apk add --update --no-cache \
 	php5-apcu \
 	php5-xcache \
 	perl \
 	asciidoc \
-	aspell-devel \
 	bzip2 \
-	dblatex \
 	dbus-x11 \
-	docbook-style-dsssl \
 	firefox \
 	gcc \
 	gcc-c++ \
-	gd-devel \
 	git \
-	gmp-devel \
 	graphviz \
 	jade \
 	java-1.7.0-openjdk \
 	lynx \
 	make \
 	memcached \
-	mod_perl \
-	mod_perl-devel \
-	openssl-devel \
-	passwd \
 	patch \
-	perl-App-cpanminus \
-	perl-CPAN \
-	perl-core \
 	postfix \
-	python-sphinx \
 	sudo \
 	supervisor \
 	tar \
-	texlive-cmap \
-	texlive-cyrillic \
-	texlive-framed \
-	texlive-mdwtools \
-	texlive-parskip \
-	texlive-tex4ht \
-	texlive-threeparttable \
-	texlive-ucs \
-	texlive-wrapfig \
-	tigervnc-server-minimal \
 	unzip \
 	zip \
-	vim-enhanced \
 	wget \
 	xmlto && \
 	cpan --quiet --notest --skip-satisfied FCGI && \
