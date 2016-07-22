@@ -54,7 +54,8 @@ RUN apk add --update --no-cache \
 	cpan --quiet --notest --skip-satisfied                  Email-MIME && \
 	cpan --quiet --notest --skip-satisfied                         URI && \
 	cpan --quiet --notest --skip-satisfied              List-MoreUtils && \
-	cpan --quiet --notest --skip-satisfied   HTML-FormatText-WithLinks
+	cpan --quiet --notest --skip-satisfied   HTML-FormatText-WithLinks && \
+	rm -rf /root/.cpan
 
 CMD ["/start.sh"]
 
