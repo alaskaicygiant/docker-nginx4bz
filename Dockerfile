@@ -8,6 +8,8 @@ RUN apk add --update --no-cache \
 	fcgiwrap \
 	fcgi-dev \
 	spawn-fcgi \
+	gcc \
+	make \
 	git \
 	graphviz \
 	memcached \
@@ -20,46 +22,38 @@ RUN apk add --update --no-cache \
 	zip \
 	wget \
 	xmlto && \
-	cpan --quiet --notest --skip-satisfied                        FCGI && \
-	cpan --quiet --notest --skip-satisfied 			 FCGI::ProcManager && \
-	cpan --quiet --notest --skip-satisfied 					 XML::Feed && \
-	cpan --quiet --notest --skip-satisfied                          GD && \
-	cpan --quiet --notest --skip-satisfied                       Chart && \
-	cpan --quiet --notest --skip-satisfied                 Template-GD && \
-	cpan --quiet --notest --skip-satisfied                  GDTextUtil && \
-	cpan --quiet --notest --skip-satisfied                     GDGraph && \
-	cpan --quiet --notest --skip-satisfied                  MIME-tools && \
-	cpan --quiet --notest --skip-satisfied                 libwww-perl && \
-	cpan --quiet --notest --skip-satisfied                    XML-Twig && \
-	cpan --quiet --notest --skip-satisfied                 PatchReader && \
-	cpan --quiet --notest --skip-satisfied                   perl-ldap && \
-	cpan --quiet --notest --skip-satisfied                 Authen-SASL && \
-	cpan --quiet --notest --skip-satisfied                Net-SMTP-SSL && \
-	cpan --quiet --notest --skip-satisfied                   SOAP-Lite && \
-	cpan --quiet --notest --skip-satisfied                     JSON-XS && \
-	cpan --quiet --notest --skip-satisfied                        JSON && \
-	cpan --quiet --notest --skip-satisfied                  Test-Taint && \
-	cpan --quiet --notest --skip-satisfied                 HTML-Parser && \
-	cpan --quiet --notest --skip-satisfied               HTML-Scrubber && \
-	cpan --quiet --notest --skip-satisfied               Encode-Detect && \
-	cpan --quiet --notest --skip-satisfied                 Email-Reply && \
-	cpan --quiet --notest --skip-satisfied                  IO-stringy && \
-	cpan --quiet --notest --skip-satisfied                      DBD-Pg && \
-	cpan --quiet --notest --skip-satisfied                   DBD-mysql && \
-	cpan --quiet --notest --skip-satisfied                  DBD-SQLite && \
-	cpan --quiet --notest --skip-satisfied                  DBD-Oracle && \
-	cpan --quiet --notest --skip-satisfied                    DateTime && \
-	cpan --quiet --notest --skip-satisfied                         DBI && \
-	cpan --quiet --notest --skip-satisfied                  Email-Send && \
-	cpan --quiet --notest --skip-satisfied                  Email-MIME && \
-	cpan --quiet --notest --skip-satisfied                         URI && \
-	cpan --quiet --notest --skip-satisfied              List-MoreUtils && \
-	cpan --quiet --notest --skip-satisfied   HTML-FormatText-WithLinks
-	#&& \
+	cpan --quiet --notest --skip-satisfied             CGI.pm && \
+	cpan --quiet --notest --skip-satisfied         Digest-SHA && \
+	cpan --quiet --notest --skip-satisfied           TimeDate && \
+	cpan --quiet --notest --skip-satisfied           DateTime && \
+	cpan --quiet --notest --skip-satisfied  DateTime-TimeZone && \
+	cpan --quiet --notest --skip-satisfied                DBI && \
+	cpan --quiet --notest --skip-satisfied   Template-Toolkit && \
+	cpan --quiet --notest --skip-satisfied         Email-Send && \
+	cpan --quiet --notest --skip-satisfied         Email-MIME && \
+	cpan --quiet --notest --skip-satisfied                URI && \
+	cpan --quiet --notest --skip-satisfied     List-MoreUtils && \
+	cpan --quiet --notest --skip-satisfied  Math-Random-ISAAC && \
+	cpan --quiet --notest --skip-satisfied           JSON-RPC && \
+	cpan --quiet --notest --skip-satisfied         Test-Taint && \
+	cpan --quiet --notest --skip-satisfied          SOAP-Lite && \
+	cpan --quiet --notest --skip-satisfied         Test-Taint && \
+	cpan --quiet --notest --skip-satisfied               JSON && \
+	cpan --quiet --notest --skip-satisfied      HTML-Scrubber && \
+	cpan --quiet --notest --skip-satisfied           XML-Feed && \
+	cpan --quiet --notest --skip-satisfied             DBD-Pg && \
+	cpan --quiet --notest --skip-satisfied         DBD-Oracle && \
+	cpan --quiet --notest --skip-satisfied         DBD-SQLite && \
+	cpan --quiet --notest --skip-satisfied          DBD-mysql && \
+	cpan --quiet --notest --skip-satisfied                 GD && \
+	cpan --quiet --notest --skip-satisfied              Chart && \
+	cpan --quiet --notest --skip-satisfied        Template-GD && \
+	cpan --quiet --notest --skip-satisfied         GDTextUtil && \
+	cpan --quiet --notest --skip-satisfied             GDGrap && \
+	cpan --quiet --notest --skip-satisfied         MIME-tools
 	#rm -rf /root/.cpan /root/.cache /tmp/*
 
 CMD ["/start.sh"]
-
 
 #	aspell-devel \
 #	dblatex \
@@ -129,3 +123,39 @@ CMD ["/start.sh"]
 #	cpan --quiet --notest --skip-satisfied                 mod_headers && \
 #	cpan --quiet --notest --skip-satisfied                 mod_expires && \
 #	cpan --quiet --notest --skip-satisfied                     mod_env
+#	cpan --quiet --notest --skip-satisfied                        FCGI && \
+#	cpan --quiet --notest --skip-satisfied 			 FCGI::ProcManager && \
+#	cpan --quiet --notest --skip-satisfied 					 XML::Feed && \
+#	cpan --quiet --notest --skip-satisfied                          GD && \
+#	cpan --quiet --notest --skip-satisfied                       Chart && \
+#	cpan --quiet --notest --skip-satisfied                 Template-GD && \
+#	cpan --quiet --notest --skip-satisfied                  GDTextUtil && \
+#	cpan --quiet --notest --skip-satisfied                     GDGraph && \
+#	cpan --quiet --notest --skip-satisfied                  MIME-tools && \
+#	cpan --quiet --notest --skip-satisfied                 libwww-perl && \
+#	cpan --quiet --notest --skip-satisfied                    XML-Twig && \
+#	cpan --quiet --notest --skip-satisfied                 PatchReader && \
+#	cpan --quiet --notest --skip-satisfied                   perl-ldap && \
+#	cpan --quiet --notest --skip-satisfied                 Authen-SASL && \
+#	cpan --quiet --notest --skip-satisfied                Net-SMTP-SSL && \
+#	cpan --quiet --notest --skip-satisfied                   SOAP-Lite && \
+#	cpan --quiet --notest --skip-satisfied                     JSON-XS && \
+#	cpan --quiet --notest --skip-satisfied                        JSON && \
+#	cpan --quiet --notest --skip-satisfied                  Test-Taint && \
+#	cpan --quiet --notest --skip-satisfied                 HTML-Parser && \
+#	cpan --quiet --notest --skip-satisfied               HTML-Scrubber && \
+#	cpan --quiet --notest --skip-satisfied               Encode-Detect && \
+#	cpan --quiet --notest --skip-satisfied                 Email-Reply && \
+#	cpan --quiet --notest --skip-satisfied                  IO-stringy && \
+#	cpan --quiet --notest --skip-satisfied                      DBD-Pg && \
+#	cpan --quiet --notest --skip-satisfied                   DBD-mysql && \
+#	cpan --quiet --notest --skip-satisfied                  DBD-SQLite && \
+#	cpan --quiet --notest --skip-satisfied                  DBD-Oracle && \
+#	cpan --quiet --notest --skip-satisfied                    DateTime && \
+#	cpan --quiet --notest --skip-satisfied                         DBI && \
+#	cpan --quiet --notest --skip-satisfied                  Email-Send && \
+#	cpan --quiet --notest --skip-satisfied                  Email-MIME && \
+#	cpan --quiet --notest --skip-satisfied                         URI && \
+#	cpan --quiet --notest --skip-satisfied              List-MoreUtils && \
+#	cpan --quiet --notest --skip-satisfied   HTML-FormatText-WithLinks
+#	#&& \
