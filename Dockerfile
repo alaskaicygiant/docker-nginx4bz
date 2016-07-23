@@ -6,6 +6,6 @@ RUN apk add --update --no-cache \
 	perl \
 	fcgi \
 	nginx \
-	bash 
+	bash
 
-CMD ["/start.sh"]
+CMD ["nginx"]
