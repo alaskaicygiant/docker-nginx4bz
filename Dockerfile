@@ -8,6 +8,9 @@ RUN apk add --update --no-cache \
 	fcgiwrap \
 	nginx \
 	supervisor \
-	bash
+	bash && \
+	mkdir -p /run/nginx
+
+COPY fcgiwrap /etc/init.d/fcgiwrap
 
 CMD ["nginx"]
