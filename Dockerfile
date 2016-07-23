@@ -1,8 +1,10 @@
-FROM richarvey/nginx-php-fpm
+FROM alpine
 
 MAINTAINER Owen Ouyang <owen.ouyang@live.com>
 
-RUN apk add --no-cache \
-	php5-apcu php5-xcache 
-	
-CMD ["/start.sh"]
+RUN echo http://nl.alpinelinux.org/alpine/edge/testing \
+                >> /etc/apk/repositories && \
+        apk add --update apache2 apache2-mod-perl
+
+CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+
